@@ -3,7 +3,7 @@ export { default as RoughCanvas } from './RoughCanvas.vue';
 // export { default as RoughLine } from './RoughLine.vue';
 // export { default as RoughRectangle } from './RoughRectangle.vue';
 export { default as RoughEllipse } from './RoughEllipse.vue';
-// export { default as RoughCircle } from './RoughCircle.vue';
+export { default as RoughCircle } from './RoughCircle.vue';
 // export { default as RoughLinearPath } from './RoughLinearPath.vue';
 // export { default as RoughPolygon } from './RoughPolygon.vue';
 // export { default as RoughArc } from './RoughArc.vue';

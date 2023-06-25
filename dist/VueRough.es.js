@@ -1,4 +1,4 @@
-import { ref as tt, onMounted as mt, provide as ht, watch as bt, openBlock as Lt, createElementBlock as Tt, renderSlot as Dt, createCommentVNode as Ct, inject as yt, onUnmounted as At, watchEffect as It } from "vue";
+import { ref as tt, onMounted as at, provide as lt, watch as vt, openBlock as Ct, createElementBlock as Dt, renderSlot as At, createCommentVNode as $t, inject as ot, onUnmounted as Et, watchEffect as wt } from "vue";
 function X(a, t, s) {
   if (a && a.length) {
     const [e, n] = t, o = Math.PI / 180 * s, h = Math.cos(o), r = Math.sin(o);
@@ -73,7 +73,7 @@ function G(a, t) {
   }
   return o;
 }
-class at {
+class rt {
   constructor(t) {
     this.helper = t;
   }
@@ -91,7 +91,7 @@ class at {
     return e;
   }
 }
-class Et extends at {
+class It extends rt {
   fillPolygons(t, s) {
     let e = s.hachureGap;
     e < 0 && (e = 4 * s.strokeWidth), e = Math.max(e, 0.1);
@@ -101,13 +101,13 @@ class Et extends at {
     return { type: "fillSketch", ops: this.renderLines(h, s) };
   }
 }
-class $t extends at {
+class zt extends rt {
   fillPolygons(t, s) {
     const e = this._fillPolygons(t, s), n = Object.assign({}, s, { hachureAngle: s.hachureAngle + 90 }), o = this._fillPolygons(t, n);
     return e.ops = e.ops.concat(o.ops), e;
   }
 }
-class zt {
+class Wt {
   constructor(t) {
     this.helper = t;
   }
@@ -132,7 +132,7 @@ class zt {
     return { type: "fillSketch", ops: e };
   }
 }
-class Wt {
+class Rt {
   constructor(t) {
     this.helper = t;
   }
@@ -154,7 +154,7 @@ class Wt {
     }), o;
   }
 }
-class Rt {
+class jt {
   constructor(t) {
     this.helper = t;
   }
@@ -177,7 +177,7 @@ class Rt {
   }
 }
 const w = {};
-class jt {
+class Gt {
   constructor(t) {
     this.seed = t;
   }
@@ -231,7 +231,7 @@ function et(a) {
   }
   return t;
 }
-function it(a) {
+function ut(a) {
   let t = 0, s = 0, e = 0, n = 0;
   const o = [];
   for (const { key: h, data: r } of a)
@@ -302,7 +302,7 @@ function it(a) {
     }
   return o;
 }
-function ct(a) {
+function ft(a) {
   const t = [];
   let s = "", e = 0, n = 0, o = 0, h = 0, r = 0, l = 0;
   for (const { key: f, data: i } of a) {
@@ -342,7 +342,7 @@ function ct(a) {
       }
       case "A": {
         const d = Math.abs(i[0]), p = Math.abs(i[1]), u = i[2], c = i[3], M = i[4], g = i[5], k = i[6];
-        d === 0 || p === 0 ? (t.push({ key: "C", data: [e, n, g, k, g, k] }), e = g, n = k) : (e !== g || n !== k) && (vt(e, n, g, k, d, p, u, c, M).forEach(function(b) {
+        d === 0 || p === 0 ? (t.push({ key: "C", data: [e, n, g, k, g, k] }), e = g, n = k) : (e !== g || n !== k) && (xt(e, n, g, k, d, p, u, c, M).forEach(function(b) {
           t.push({ key: "C", data: b });
         }), e = g, n = k);
         break;
@@ -357,7 +357,7 @@ function ct(a) {
 function R(a, t, s) {
   return [a * Math.cos(s) - t * Math.sin(s), a * Math.sin(s) + t * Math.cos(s)];
 }
-function vt(a, t, s, e, n, o, h, r, l, f) {
+function xt(a, t, s, e, n, o, h, r, l, f) {
   const i = (d = h, Math.PI * d / 180);
   var d;
   let p = [], u = 0, c = 0, M = 0, g = 0;
@@ -366,41 +366,41 @@ function vt(a, t, s, e, n, o, h, r, l, f) {
   else {
     [a, t] = R(a, t, -i), [s, e] = R(s, e, -i);
     const S = (a - s) / 2, v = (t - e) / 2;
-    let D = S * S / (n * n) + v * v / (o * o);
-    D > 1 && (D = Math.sqrt(D), n *= D, o *= D);
-    const $ = n * n, z = o * o, St = $ * z - $ * v * v - z * S * S, _t = $ * v * v + z * S * S, rt = (r === l ? -1 : 1) * Math.sqrt(Math.abs(St / _t));
-    M = rt * n * v / o + (a + s) / 2, g = rt * -o * S / n + (t + e) / 2, u = Math.asin(parseFloat(((t - g) / o).toFixed(9))), c = Math.asin(parseFloat(((e - g) / o).toFixed(9))), a < M && (u = Math.PI - u), s < M && (c = Math.PI - c), u < 0 && (u = 2 * Math.PI + u), c < 0 && (c = 2 * Math.PI + c), l && u > c && (u -= 2 * Math.PI), !l && c > u && (c -= 2 * Math.PI);
+    let C = S * S / (n * n) + v * v / (o * o);
+    C > 1 && (C = Math.sqrt(C), n *= C, o *= C);
+    const I = n * n, z = o * o, Lt = I * z - I * v * v - z * S * S, Tt = I * v * v + z * S * S, ct = (r === l ? -1 : 1) * Math.sqrt(Math.abs(Lt / Tt));
+    M = ct * n * v / o + (a + s) / 2, g = ct * -o * S / n + (t + e) / 2, u = Math.asin(parseFloat(((t - g) / o).toFixed(9))), c = Math.asin(parseFloat(((e - g) / o).toFixed(9))), a < M && (u = Math.PI - u), s < M && (c = Math.PI - c), u < 0 && (u = 2 * Math.PI + u), c < 0 && (c = 2 * Math.PI + c), l && u > c && (u -= 2 * Math.PI), !l && c > u && (c -= 2 * Math.PI);
   }
   let k = c - u;
   if (Math.abs(k) > 120 * Math.PI / 180) {
-    const S = c, v = s, D = e;
-    c = l && c > u ? u + 120 * Math.PI / 180 * 1 : u + 120 * Math.PI / 180 * -1, p = vt(s = M + n * Math.cos(c), e = g + o * Math.sin(c), v, D, n, o, h, 0, l, [c, S, M, g]);
+    const S = c, v = s, C = e;
+    c = l && c > u ? u + 120 * Math.PI / 180 * 1 : u + 120 * Math.PI / 180 * -1, p = xt(s = M + n * Math.cos(c), e = g + o * Math.sin(c), v, C, n, o, h, 0, l, [c, S, M, g]);
   }
   k = c - u;
-  const b = Math.cos(u), O = Math.sin(u), _ = Math.cos(c), y = Math.sin(c), x = Math.tan(k / 4), C = 4 / 3 * n * x, T = 4 / 3 * o * x, q = [a, t], L = [a + C * O, t - T * b], I = [s + C * y, e - T * _], ot = [s, e];
+  const b = Math.cos(u), O = Math.sin(u), _ = Math.cos(c), y = Math.sin(c), x = Math.tan(k / 4), D = 4 / 3 * n * x, T = 4 / 3 * o * x, q = [a, t], L = [a + D * O, t - T * b], $ = [s + D * y, e - T * _], it = [s, e];
   if (L[0] = 2 * q[0] - L[0], L[1] = 2 * q[1] - L[1], f)
-    return [L, I, ot].concat(p);
+    return [L, $, it].concat(p);
   {
-    p = [L, I, ot].concat(p);
+    p = [L, $, it].concat(p);
     const S = [];
     for (let v = 0; v < p.length; v += 3) {
-      const D = R(p[v][0], p[v][1], i), $ = R(p[v + 1][0], p[v + 1][1], i), z = R(p[v + 2][0], p[v + 2][1], i);
-      S.push([D[0], D[1], $[0], $[1], z[0], z[1]]);
+      const C = R(p[v][0], p[v][1], i), I = R(p[v + 1][0], p[v + 1][1], i), z = R(p[v + 2][0], p[v + 2][1], i);
+      S.push([C[0], C[1], I[0], I[1], z[0], z[1]]);
     }
     return S;
   }
 }
-const Gt = { randOffset: function(a, t) {
+const qt = { randOffset: function(a, t) {
   return m(a, t);
 }, randOffsetWithRange: function(a, t, s) {
   return H(a, t, s);
 }, ellipse: function(a, t, s, e, n) {
-  const o = xt(s, e, n);
+  const o = Ot(s, e, n);
   return st(a, t, n, o).opset;
 }, doubleLineOps: function(a, t, s, e, n) {
   return A(a, t, s, e, n, !0);
 } };
-function wt(a, t, s, e, n) {
+function Pt(a, t, s, e, n) {
   return { type: "path", ops: A(a, t, s, e, n) };
 }
 function Z(a, t, s) {
@@ -411,17 +411,17 @@ function Z(a, t, s) {
       n.push(...A(a[o][0], a[o][1], a[o + 1][0], a[o + 1][1], s));
     return t && n.push(...A(a[e - 1][0], a[e - 1][1], a[0][0], a[0][1], s)), { type: "path", ops: n };
   }
-  return e === 2 ? wt(a[0][0], a[0][1], a[1][0], a[1][1], s) : { type: "path", ops: [] };
+  return e === 2 ? Pt(a[0][0], a[0][1], a[1][0], a[1][1], s) : { type: "path", ops: [] };
 }
-function qt(a, t, s, e, n) {
+function Ft(a, t, s, e, n) {
   return function(o, h) {
     return Z(o, !0, h);
   }([[a, t], [a + s, t], [a + s, t + e], [a, t + e]], n);
 }
-function Ft(a, t) {
-  let s = ft(a, 1 * (1 + 0.2 * t.roughness), t);
+function Nt(a, t) {
+  let s = gt(a, 1 * (1 + 0.2 * t.roughness), t);
   if (!t.disableMultiStroke) {
-    const e = ft(a, 1.5 * (1 + 0.22 * t.roughness), function(n) {
+    const e = gt(a, 1.5 * (1 + 0.22 * t.roughness), function(n) {
       const o = Object.assign({}, n);
       return o.randomizer = void 0, n.seed && (o.seed = n.seed + 1), o;
     }(t));
@@ -429,22 +429,22 @@ function Ft(a, t) {
   }
   return { type: "path", ops: s };
 }
-function xt(a, t, s) {
+function Ot(a, t, s) {
   const e = Math.sqrt(2 * Math.PI * Math.sqrt((Math.pow(a / 2, 2) + Math.pow(t / 2, 2)) / 2)), n = Math.ceil(Math.max(s.curveStepCount, s.curveStepCount / Math.sqrt(200) * e)), o = 2 * Math.PI / n;
   let h = Math.abs(a / 2), r = Math.abs(t / 2);
   const l = 1 - s.curveFitting;
   return h += m(h * l, s), r += m(r * l, s), { increment: o, rx: h, ry: r };
 }
 function st(a, t, s, e) {
-  const [n, o] = pt(e.increment, a, t, e.rx, e.ry, 1, e.increment * H(0.1, H(0.4, 1, s), s), s);
+  const [n, o] = Mt(e.increment, a, t, e.rx, e.ry, 1, e.increment * H(0.1, H(0.4, 1, s), s), s);
   let h = B(n, null, s);
   if (!s.disableMultiStroke && s.roughness !== 0) {
-    const [r] = pt(e.increment, a, t, e.rx, e.ry, 1.5, 0, s), l = B(r, null, s);
+    const [r] = Mt(e.increment, a, t, e.rx, e.ry, 1.5, 0, s), l = B(r, null, s);
     h = h.concat(l);
   }
   return { estimatedPoints: o, opset: { type: "path", ops: h } };
 }
-function lt(a, t, s, e, n, o, h, r, l) {
+function pt(a, t, s, e, n, o, h, r, l) {
   const f = a, i = t;
   let d = Math.abs(s / 2), p = Math.abs(e / 2);
   d += m(0.01 * d, l), p += m(0.01 * p, l);
@@ -452,14 +452,14 @@ function lt(a, t, s, e, n, o, h, r, l) {
   for (; u < 0; )
     u += 2 * Math.PI, c += 2 * Math.PI;
   c - u > 2 * Math.PI && (u = 0, c = 2 * Math.PI);
-  const M = 2 * Math.PI / l.curveStepCount, g = Math.min(M / 2, (c - u) / 2), k = dt(g, f, i, d, p, u, c, 1, l);
+  const M = 2 * Math.PI / l.curveStepCount, g = Math.min(M / 2, (c - u) / 2), k = kt(g, f, i, d, p, u, c, 1, l);
   if (!l.disableMultiStroke) {
-    const b = dt(g, f, i, d, p, u, c, 1.5, l);
+    const b = kt(g, f, i, d, p, u, c, 1.5, l);
     k.push(...b);
   }
   return h && (r ? k.push(...A(f, i, f + d * Math.cos(u), i + p * Math.sin(u), l), ...A(f, i, f + d * Math.cos(c), i + p * Math.sin(c), l)) : k.push({ op: "lineTo", data: [f, i] }, { op: "lineTo", data: [f + d * Math.cos(u), i + p * Math.sin(u)] })), { type: "path", ops: k };
 }
-function V(a, t) {
+function N(a, t) {
   const s = [];
   for (const e of a)
     if (e.length) {
@@ -478,56 +478,56 @@ function W(a, t) {
     if (!w[n])
       switch (n) {
         case "zigzag":
-          w[n] || (w[n] = new Et(e));
+          w[n] || (w[n] = new It(e));
           break;
         case "cross-hatch":
-          w[n] || (w[n] = new $t(e));
-          break;
-        case "dots":
           w[n] || (w[n] = new zt(e));
           break;
-        case "dashed":
+        case "dots":
           w[n] || (w[n] = new Wt(e));
           break;
-        case "zigzag-line":
+        case "dashed":
           w[n] || (w[n] = new Rt(e));
+          break;
+        case "zigzag-line":
+          w[n] || (w[n] = new jt(e));
           break;
         case "hachure":
         default:
-          n = "hachure", w[n] || (w[n] = new at(e));
+          n = "hachure", w[n] || (w[n] = new rt(e));
       }
     return w[n];
-  }(t, Gt).fillPolygons(a, t);
+  }(t, qt).fillPolygons(a, t);
 }
-function Pt(a) {
-  return a.randomizer || (a.randomizer = new jt(a.seed || 0)), a.randomizer.next();
+function St(a) {
+  return a.randomizer || (a.randomizer = new Gt(a.seed || 0)), a.randomizer.next();
 }
 function H(a, t, s, e = 1) {
-  return s.roughness * e * (Pt(s) * (t - a) + a);
+  return s.roughness * e * (St(s) * (t - a) + a);
 }
 function m(a, t, s = 1) {
   return H(-a, a, t, s);
 }
 function A(a, t, s, e, n, o = !1) {
-  const h = o ? n.disableMultiStrokeFill : n.disableMultiStroke, r = ut(a, t, s, e, n, !0, !1);
+  const h = o ? n.disableMultiStrokeFill : n.disableMultiStroke, r = dt(a, t, s, e, n, !0, !1);
   if (h)
     return r;
-  const l = ut(a, t, s, e, n, !0, !0);
+  const l = dt(a, t, s, e, n, !0, !0);
   return r.concat(l);
 }
-function ut(a, t, s, e, n, o, h) {
+function dt(a, t, s, e, n, o, h) {
   const r = Math.pow(a - s, 2) + Math.pow(t - e, 2), l = Math.sqrt(r);
   let f = 1;
   f = l < 200 ? 1 : l > 500 ? 0.4 : -16668e-7 * l + 1.233334;
   let i = n.maxRandomnessOffset || 0;
   i * i * 100 > r && (i = l / 10);
-  const d = i / 2, p = 0.2 + 0.2 * Pt(n);
+  const d = i / 2, p = 0.2 + 0.2 * St(n);
   let u = n.bowing * n.maxRandomnessOffset * (e - t) / 200, c = n.bowing * n.maxRandomnessOffset * (a - s) / 200;
   u = m(u, n, f), c = m(c, n, f);
   const M = [], g = () => m(d, n, f), k = () => m(i, n, f), b = n.preserveVertices;
   return o && (h ? M.push({ op: "move", data: [a + (b ? 0 : g()), t + (b ? 0 : g())] }) : M.push({ op: "move", data: [a + (b ? 0 : m(i, n, f)), t + (b ? 0 : m(i, n, f))] })), h ? M.push({ op: "bcurveTo", data: [u + a + (s - a) * p + g(), c + t + (e - t) * p + g(), u + a + 2 * (s - a) * p + g(), c + t + 2 * (e - t) * p + g(), s + (b ? 0 : g()), e + (b ? 0 : g())] }) : M.push({ op: "bcurveTo", data: [u + a + (s - a) * p + k(), c + t + (e - t) * p + k(), u + a + 2 * (s - a) * p + k(), c + t + 2 * (e - t) * p + k(), s + (b ? 0 : k()), e + (b ? 0 : k())] }), M;
 }
-function ft(a, t, s) {
+function gt(a, t, s) {
   const e = [];
   e.push([a[0][0] + m(t, s), a[0][1] + m(t, s)]), e.push([a[0][0] + m(t, s), a[0][1] + m(t, s)]);
   for (let n = 1; n < a.length; n++)
@@ -551,7 +551,7 @@ function B(a, t, s) {
     e === 3 ? (n.push({ op: "move", data: [a[1][0], a[1][1]] }), n.push({ op: "bcurveTo", data: [a[1][0], a[1][1], a[2][0], a[2][1], a[2][0], a[2][1]] })) : e === 2 && n.push(...A(a[0][0], a[0][1], a[1][0], a[1][1], s));
   return n;
 }
-function pt(a, t, s, e, n, o, h, r) {
+function Mt(a, t, s, e, n, o, h, r) {
   const l = [], f = [];
   if (r.roughness === 0) {
     a /= 4, f.push([t + e * Math.cos(-a), s + n * Math.sin(-a)]);
@@ -572,7 +572,7 @@ function pt(a, t, s, e, n, o, h, r) {
   }
   return [f, l];
 }
-function dt(a, t, s, e, n, o, h, r, l) {
+function kt(a, t, s, e, n, o, h, r, l) {
   const f = o + m(0.1, l), i = [];
   i.push([m(r, l) + t + 0.9 * e * Math.cos(f - a), m(r, l) + s + 0.9 * n * Math.sin(f - a)]);
   for (let d = f; d <= h; d += a)
@@ -593,7 +593,7 @@ function j(a) {
 function Q(a, t) {
   return Math.pow(a[0] - t[0], 2) + Math.pow(a[1] - t[1], 2);
 }
-function Nt(a, t, s) {
+function Zt(a, t, s) {
   const e = Q(t, s);
   if (e === 0)
     return Q(a, t);
@@ -625,19 +625,19 @@ function nt(a, t, s, e) {
   var o, h;
   return n;
 }
-function Zt(a, t) {
+function Qt(a, t) {
   return U(a, 0, a.length, t);
 }
 function U(a, t, s, e, n) {
   const o = n || [], h = a[t], r = a[s - 1];
   let l = 0, f = 1;
   for (let i = t + 1; i < s - 1; ++i) {
-    const d = Nt(a[i], h, r);
+    const d = Zt(a[i], h, r);
     d > l && (l = d, f = i);
   }
   return Math.sqrt(l) > e ? (U(a, t, f + 1, e, o), U(a, f, s, e, o)) : (o.length || o.push(h), o.push(r)), o;
 }
-function gt(a, t = 0.15, s) {
+function mt(a, t = 0.15, s) {
   const e = [], n = (a.length - 1) / 3;
   for (let o = 0; o < n; o++)
     nt(a, 3 * o, t, e);
@@ -659,18 +659,18 @@ class J {
   }
   line(t, s, e, n, o) {
     const h = this._o(o);
-    return this._d("line", [wt(t, s, e, n, h)], h);
+    return this._d("line", [Pt(t, s, e, n, h)], h);
   }
   rectangle(t, s, e, n, o) {
-    const h = this._o(o), r = [], l = qt(t, s, e, n, h);
+    const h = this._o(o), r = [], l = Ft(t, s, e, n, h);
     if (h.fill) {
       const f = [[t, s], [t + e, s], [t + e, s + n], [t, s + n]];
-      h.fillStyle === "solid" ? r.push(V([f], h)) : r.push(W([f], h));
+      h.fillStyle === "solid" ? r.push(N([f], h)) : r.push(W([f], h));
     }
     return h.stroke !== P && r.push(l), this._d("rectangle", r, h);
   }
   ellipse(t, s, e, n, o) {
-    const h = this._o(o), r = [], l = xt(e, n, h), f = st(t, s, h, l);
+    const h = this._o(o), r = [], l = Ot(e, n, h), f = st(t, s, h, l);
     if (h.fill)
       if (h.fillStyle === "solid") {
         const i = st(t, s, h, l).opset;
@@ -688,33 +688,33 @@ class J {
     return this._d("linearPath", [Z(t, !1, e)], e);
   }
   arc(t, s, e, n, o, h, r = !1, l) {
-    const f = this._o(l), i = [], d = lt(t, s, e, n, o, h, r, !0, f);
+    const f = this._o(l), i = [], d = pt(t, s, e, n, o, h, r, !0, f);
     if (r && f.fill)
       if (f.fillStyle === "solid") {
         const p = Object.assign({}, f);
         p.disableMultiStroke = !0;
-        const u = lt(t, s, e, n, o, h, !0, !1, p);
+        const u = pt(t, s, e, n, o, h, !0, !1, p);
         u.type = "fillPath", i.push(u);
       } else
         i.push(function(p, u, c, M, g, k, b) {
           const O = p, _ = u;
           let y = Math.abs(c / 2), x = Math.abs(M / 2);
           y += m(0.01 * y, b), x += m(0.01 * x, b);
-          let C = g, T = k;
-          for (; C < 0; )
-            C += 2 * Math.PI, T += 2 * Math.PI;
-          T - C > 2 * Math.PI && (C = 0, T = 2 * Math.PI);
-          const q = (T - C) / b.curveStepCount, L = [];
-          for (let I = C; I <= T; I += q)
-            L.push([O + y * Math.cos(I), _ + x * Math.sin(I)]);
+          let D = g, T = k;
+          for (; D < 0; )
+            D += 2 * Math.PI, T += 2 * Math.PI;
+          T - D > 2 * Math.PI && (D = 0, T = 2 * Math.PI);
+          const q = (T - D) / b.curveStepCount, L = [];
+          for (let $ = D; $ <= T; $ += q)
+            L.push([O + y * Math.cos($), _ + x * Math.sin($)]);
           return L.push([O + y * Math.cos(T), _ + x * Math.sin(T)]), L.push([O, _]), W([L], b);
         }(t, s, e, n, o, h, f));
     return f.stroke !== P && i.push(d), this._d("arc", i, f);
   }
   curve(t, s) {
-    const e = this._o(s), n = [], o = Ft(t, e);
+    const e = this._o(s), n = [], o = Nt(t, e);
     if (e.fill && e.fill !== P && t.length >= 3) {
-      const h = gt(function(r, l = 0) {
+      const h = mt(function(r, l = 0) {
         const f = r.length;
         if (f < 3)
           throw new Error("A curve must have at least three points.");
@@ -735,13 +735,13 @@ class J {
         }
         return i;
       }(t), 10, (1 + e.roughness) / 2);
-      e.fillStyle === "solid" ? n.push(V([h], e)) : n.push(W([h], e));
+      e.fillStyle === "solid" ? n.push(N([h], e)) : n.push(W([h], e));
     }
     return e.stroke !== P && n.push(o), this._d("curve", n, e);
   }
   polygon(t, s) {
     const e = this._o(s), n = [], o = Z(t, !0, e);
-    return e.fill && (e.fillStyle === "solid" ? n.push(V([t], e)) : n.push(W([t], e))), e.stroke !== P && n.push(o), this._d("polygon", n, e);
+    return e.fill && (e.fillStyle === "solid" ? n.push(N([t], e)) : n.push(W([t], e))), e.stroke !== P && n.push(o), this._d("polygon", n, e);
   }
   path(t, s) {
     const e = this._o(s), n = [];
@@ -749,10 +749,10 @@ class J {
       return this._d("path", n, e);
     t = (t || "").replace(/\n/g, " ").replace(/(-\s)/g, "-").replace("/(ss)/g", " ");
     const o = e.fill && e.fill !== "transparent" && e.fill !== P, h = e.stroke !== P, r = !!(e.simplification && e.simplification < 1), l = function(f, i, d) {
-      const p = ct(it(et(f))), u = [];
+      const p = ft(ut(et(f))), u = [];
       let c = [], M = [0, 0], g = [];
       const k = () => {
-        g.length >= 4 && c.push(...gt(g, i)), g = [];
+        g.length >= 4 && c.push(...mt(g, i)), g = [];
       }, b = () => {
         k(), c.length && (u.push(c), c = []);
       };
@@ -778,15 +778,15 @@ class J {
         return u;
       const O = [];
       for (const _ of u) {
-        const y = Zt(_, d);
+        const y = Qt(_, d);
         y.length && O.push(y);
       }
       return O;
     }(t, 1, r ? 4 - 4 * e.simplification : (1 + e.roughness) / 2);
-    return o && (e.fillStyle === "solid" ? n.push(V(l, e)) : n.push(W(l, e))), h && (r ? l.forEach((f) => {
+    return o && (e.fillStyle === "solid" ? n.push(N(l, e)) : n.push(W(l, e))), h && (r ? l.forEach((f) => {
       n.push(Z(f, !1, e));
     }) : n.push(function(f, i) {
-      const d = ct(it(et(f))), p = [];
+      const d = ft(ut(et(f))), p = [];
       let u = [0, 0], c = [0, 0];
       for (const { key: M, data: g } of d)
         switch (M) {
@@ -849,7 +849,7 @@ class J {
     return e < 0 && (e = s.strokeWidth / 2), { d: this.opsToPath(t), stroke: s.fill || P, strokeWidth: e, fill: P };
   }
 }
-class Qt {
+class Ht {
   constructor(t, s) {
     this.canvas = t, this.ctx = this.canvas.getContext("2d"), this.gen = new J(s);
   }
@@ -934,21 +934,21 @@ class Qt {
     return this.draw(e), e;
   }
 }
-const N = "http://www.w3.org/2000/svg";
-class Ht {
+const V = "http://www.w3.org/2000/svg";
+class Bt {
   constructor(t, s) {
     this.svg = t, this.gen = new J(s);
   }
   draw(t) {
-    const s = t.sets || [], e = t.options || this.getDefaultOptions(), n = this.svg.ownerDocument || window.document, o = n.createElementNS(N, "g"), h = t.options.fixedDecimalPlaceDigits;
+    const s = t.sets || [], e = t.options || this.getDefaultOptions(), n = this.svg.ownerDocument || window.document, o = n.createElementNS(V, "g"), h = t.options.fixedDecimalPlaceDigits;
     for (const r of s) {
       let l = null;
       switch (r.type) {
         case "path":
-          l = n.createElementNS(N, "path"), l.setAttribute("d", this.opsToPath(r, h)), l.setAttribute("stroke", e.stroke), l.setAttribute("stroke-width", e.strokeWidth + ""), l.setAttribute("fill", "none"), e.strokeLineDash && l.setAttribute("stroke-dasharray", e.strokeLineDash.join(" ").trim()), e.strokeLineDashOffset && l.setAttribute("stroke-dashoffset", `${e.strokeLineDashOffset}`);
+          l = n.createElementNS(V, "path"), l.setAttribute("d", this.opsToPath(r, h)), l.setAttribute("stroke", e.stroke), l.setAttribute("stroke-width", e.strokeWidth + ""), l.setAttribute("fill", "none"), e.strokeLineDash && l.setAttribute("stroke-dasharray", e.strokeLineDash.join(" ").trim()), e.strokeLineDashOffset && l.setAttribute("stroke-dashoffset", `${e.strokeLineDashOffset}`);
           break;
         case "fillPath":
-          l = n.createElementNS(N, "path"), l.setAttribute("d", this.opsToPath(r, h)), l.setAttribute("stroke", "none"), l.setAttribute("stroke-width", "0"), l.setAttribute("fill", e.fill || ""), t.shape !== "curve" && t.shape !== "polygon" || l.setAttribute("fill-rule", "evenodd");
+          l = n.createElementNS(V, "path"), l.setAttribute("d", this.opsToPath(r, h)), l.setAttribute("stroke", "none"), l.setAttribute("stroke-width", "0"), l.setAttribute("fill", e.fill || ""), t.shape !== "curve" && t.shape !== "polygon" || l.setAttribute("fill-rule", "evenodd");
           break;
         case "fillSketch":
           l = this.fillSketch(n, r, e);
@@ -960,7 +960,7 @@ class Ht {
   fillSketch(t, s, e) {
     let n = e.fillWeight;
     n < 0 && (n = e.strokeWidth / 2);
-    const o = t.createElementNS(N, "path");
+    const o = t.createElementNS(V, "path");
     return o.setAttribute("d", this.opsToPath(s, e.fixedDecimalPlaceDigits)), o.setAttribute("stroke", e.fill || ""), o.setAttribute("stroke-width", n + ""), o.setAttribute("fill", "none"), e.fillLineDash && o.setAttribute("stroke-dasharray", e.fillLineDash.join(" ").trim()), e.fillLineDashOffset && o.setAttribute("stroke-dashoffset", `${e.fillLineDashOffset}`), o;
   }
   get generator() {
@@ -1009,13 +1009,13 @@ class Ht {
     return this.draw(e);
   }
 }
-var Mt = { canvas: (a, t) => new Qt(a, t), svg: (a, t) => new Ht(a, t), generator: (a) => new J(a), newSeed: () => J.newSeed() };
-const Ot = (a, t) => {
+var bt = { canvas: (a, t) => new Ht(a, t), svg: (a, t) => new Bt(a, t), generator: (a) => new J(a), newSeed: () => J.newSeed() };
+const ht = (a, t) => {
   const s = a.__vccOpts || a;
   for (const [e, n] of t)
     s[e] = n;
   return s;
-}, Bt = {
+}, Ut = {
   name: "RoughCanvas",
   props: {
     width: String,
@@ -1026,29 +1026,29 @@ const Ot = (a, t) => {
     const t = tt(null), s = tt(null), e = () => {
       t.value.getContext("2d").clearRect(0, 0, t.value.width, t.value.height);
     };
-    return mt(() => {
-      s.value = Mt.canvas(t.value, a.config), ht("rough", s.value), ht("clearCanvas", e);
-    }), bt(() => a.config, () => {
-      s.value = Mt.canvas(t.value, a.config);
+    return at(() => {
+      s.value = bt.canvas(t.value, a.config), lt("rough", s.value), lt("clearCanvas", e);
+    }), vt(() => a.config, () => {
+      s.value = bt.canvas(t.value, a.config);
     }, { deep: !0 }), {
       rough: s,
       canvasRef: t,
       clearCanvas: e
     };
   }
-}, Ut = ["width", "height"];
-function Jt(a, t, s, e, n, o) {
-  return Lt(), Tt("canvas", {
+}, Jt = ["width", "height"];
+function Kt(a, t, s, e, n, o) {
+  return Ct(), Dt("canvas", {
     ref: "canvasRef",
     width: s.width,
     height: s.height
   }, [
-    e.rough ? Dt(a.$slots, "default", { key: 0 }) : Ct("", !0)
-  ], 8, Ut);
+    e.rough ? At(a.$slots, "default", { key: 0 }) : $t("", !0)
+  ], 8, Jt);
 }
-const Kt = /* @__PURE__ */ Ot(Bt, [["render", Jt]]);
-function Xt(a) {
-  const t = tt(null), s = yt("rough"), e = (n, o, h = !1) => {
+const Xt = /* @__PURE__ */ ht(Ut, [["render", Kt]]);
+function _t(a) {
+  const t = tt(null), s = ot("rough"), e = (n, o, h = !1) => {
     const r = Object.assign(
       {},
       ...Object.entries(a).map(([l, f]) => f !== void 0 && { [l]: f })
@@ -1059,9 +1059,9 @@ function Xt(a) {
     }
     s.svg && (t.value && s.remove(t.value), t.value = s[n](...o, r));
   };
-  return bt(() => a, () => {
+  return vt(() => a, () => {
     e();
-  }, { deep: !0 }), e(), At(() => {
+  }, { deep: !0 }), e(), Et(() => {
     s.svg && t.value && s.remove(t.value);
   }), {
     element: t,
@@ -1078,13 +1078,13 @@ const Yt = {
     // ...other props
   },
   setup(a) {
-    yt("clearCanvas");
-    const { createElement: t } = Xt(a), s = (e = !1) => {
+    ot("clearCanvas");
+    const { createElement: t } = _t(a), s = (e = !1) => {
       t("ellipse", [a.x, a.y, a.width, a.height], e);
     };
-    return mt(() => {
+    return at(() => {
       s(!0);
-    }), It(() => {
+    }), wt(() => {
       s(!0);
     }), {
       handler: s
@@ -1094,19 +1094,46 @@ const Yt = {
 function te(a, t, s, e, n, o) {
   return null;
 }
-const ee = /* @__PURE__ */ Ot(Yt, [["render", te]]), kt = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+const ee = /* @__PURE__ */ ht(Yt, [["render", te]]), se = {
+  name: "RoughCircle",
+  props: {
+    x: Number,
+    y: Number,
+    diameter: Number
+    // ...other props
+  },
+  setup(a) {
+    ot("clearCanvas");
+    const { createElement: t } = _t(a), s = (e = !1) => {
+      t("circle", [a.x, a.y, a.diameter], e);
+    };
+    return at(() => {
+      s(!0);
+    }), wt(() => {
+      s(!0);
+    }), {
+      handler: s
+    };
+  }
+};
+function ne(a, t, s, e, n, o) {
+  return null;
+}
+const ae = /* @__PURE__ */ ht(se, [["render", ne]]), yt = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
-  RoughCanvas: Kt,
+  RoughCanvas: Xt,
+  RoughCircle: ae,
   RoughEllipse: ee
 }, Symbol.toStringTag, { value: "Module" }));
-function ne(a) {
-  Object.keys(kt).forEach((t) => {
-    a.component(t, kt[t]);
+function re(a) {
+  Object.keys(yt).forEach((t) => {
+    a.component(t, yt[t]);
   });
 }
 export {
-  Kt as RoughCanvas,
+  Xt as RoughCanvas,
+  ae as RoughCircle,
   ee as RoughEllipse,
-  ne as default,
-  ne as install
+  re as default,
+  re as install
 };
